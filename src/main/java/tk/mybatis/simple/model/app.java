@@ -32,15 +32,18 @@ public class app {
 	private static void b(SqlSessionFactory factory) {
 		SqlSession session = factory.openSession();
 		zzMapper mapper = session.getMapper(zzMapper.class);
-		// Country c = new Country();
-		// c.setCountryname("a");
-		// c.setCountrycode("aa");
-		// mapper.insertCountry(c);
+		Country c = new Country();
+		c.setCountryname("a");
+		c.setCountrycode("aa");
+		mapper.insertCountry(c);
 
-		// mapper.deleteCountry(7);
+		// int i = mapper.deleteCountry(8);
+		// System.out.println(i);
+		//
+		// Country country = mapper.getCountry(8);
+		// System.out.println(country.getId() + " " + country.getCountryname() + " " + country.getCountrycode());
 
-		Country country = mapper.getCountry(7);
-		System.out.println(country.getId() + "   " + country.getCountryname() + "    " + country.getCountrycode());
+		session.commit();
 		session.close();
 	}
 }

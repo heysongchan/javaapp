@@ -9,7 +9,7 @@ public interface zzMapper {
 
 	Country getCountry(Integer id);
 
-	void insertCountry(Country c);
+	int insertCountry(Country c);
 
-	void deleteCountry(Integer id);
+	int deleteCountry(Integer id);
 }
