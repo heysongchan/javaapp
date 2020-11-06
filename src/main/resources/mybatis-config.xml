@@ -22,7 +22,7 @@
     </settings>
 
     <typeAliases>
-        <!-- <typeAlias alias="blog" type="com.wuzz.domain.Blog" /> -->
+        <!-- 实体class的package -->
         <package name="tk.mybatis.simple.model"/>
     </typeAliases>
 
@@ -60,6 +60,7 @@
 
     <mappers>
         <mapper resource="tk/mybatis/simple/mapper/CountryMapper.xml"/>
+        <package name="tk.mybatis.simple.mapper"/>
     </mappers>
 
 </configuration>

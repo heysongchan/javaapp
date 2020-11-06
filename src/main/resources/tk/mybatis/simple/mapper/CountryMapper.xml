@@ -1,8 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="tk.mybatis.simple.mapper.CountryMapper">
+        
+<mapper namespace="tk.mybatis.simple.model.zzMapper"><!-- 接口class的全路径 -->
     <select id="selectAll" resultType="Country">
         select * from country
     </select>
+    
+    <select id="getC" resultType="Country">
+        select * from country
+    </select>
+    
+    <select id="getId" resultType="Integer">
+        select id from country limit 0,1
+    </select>
+    
+    
+    <select id="getCountry" resultType="Country" parameterType="Integer">
+        select * from country where id = #{id}
+    </select>
+    <insert id="insertCountry" parameterType="Country">
+        insert into country (countryname,countrycode) VALUES (#{countryname},#{countrycode})
+    </insert>
+    <delete id="deleteCountry" parameterType="Integer">
+        delete from country where id=#{id}
+    </delete>
 </mapper>
